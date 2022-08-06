@@ -9,20 +9,40 @@
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true" (click)="modalClose()">&times;
           </button>
         </div>
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="user" class="form-label">الاسم</label>
-            <input type="email" class="form-control" id="user" [(ngModel)]="username">
+        <form [formGroup]="userForm" (ngSubmit)="Add()">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="user" class="form-label">الاسم</label>
+              <input type="email"
+                     class="form-control"
+                     formControlName="username"
+                     id="user">
+              <!--  error massage for required   -->
+              <p *ngIf="userForm?.get('username')?.hasError('required') && userForm?.get('username')?.touched" class="text-danger">
+                <small>
+                  لا يمكنك ترك هذا الحقل فارغ
+                </small>
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="details" class="form-label">التفاصيل</label>
+              <input type="text"
+                     class="form-control"
+                      formControlName="details"
+                     id="details">
+              <!--  error massage for required   -->
+              <p *ngIf="userForm?.get('details')?.hasError('required') && userForm?.get('details')?.touched" class="text-danger">
+                <small>
+                  لا يمكنك ترك هذا الحقل فارغ
+                </small>
+              </p>
+            </div>
           </div>
-          <div class="form-group">
-            <label for="details" class="form-label">التفاضيل</label>
-            <input type="text" class="form-control" id="details" [(ngModel)]="details" >
+          <div class="modal-footer">
+            <button type="submit"  class="btn btn-primary">حفظ</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalClose()">الغاء</button>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" (click)="Add()">حفظ</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalClose()">الغاء</button>
-        </div>
+        </form>
       </div>
     </div>
   </div>

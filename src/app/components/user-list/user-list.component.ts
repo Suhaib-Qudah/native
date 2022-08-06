@@ -22,6 +22,7 @@ export class UserListComponent implements OnInit {
     this.subscription = this.userSr.userEdited.subscribe(
       (users: User[]) => {
         this.users = users
+        console.log('users',this.users)
       })
     this.users = this.userSr.getUsers()
   }

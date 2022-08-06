@@ -11,7 +11,7 @@ import { SidebarComponent } from './components/layout/sidebar/sidebar.component'
 import { ModalComponent } from './components/modal/modal.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
 import { UserListComponent } from './components/user-list/user-list.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import {FormsModule} from "@angular/forms";
     imports: [
         BrowserModule,
         AppRoutingModule,
-        FormsModule
+        FormsModule,
+        ReactiveFormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
