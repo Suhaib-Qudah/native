@@ -1,0 +1,98 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  &.active {
+    display: flex;
+  }
+
+  &-dialog {
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background: $light;
+    border-radius: 0.5rem;
+    max-width: 40rem;
+    max-height: 40rem;
+    overflow-y: auto;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: $light;
+  }
+
+  &-title {
+    font-size: $font-md;
+    font-weight: bold;
+    color: $gray;
+  }
+
+  &-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: $font-sm;
+    color: $dark;
+    cursor: pointer;
+
+    &:hover {
+      background: lighten($dark-gray, 5%);
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    background-color: $light-2;
+    border-top: 1px solid $border;
+    border-bottom: 1px solid $border;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    font-size: $font-sm;
+    color: $dark;
+    cursor: pointer;
+
+    &:hover {
+      background: lighten($dark-gray, 5%);
+    }
+  }
+
+}
+
+.close {
+  all: unset;
+  font-size: $font-sm;
+  color: $border;
+  cursor: pointer;
+}

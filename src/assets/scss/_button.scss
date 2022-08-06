@@ -1,0 +1,27 @@
+.btn{
+  all: unset;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 1.5rem;
+  gap: 1rem;
+  font-size: $font-sm;
+  cursor: pointer;
+  &:hover{
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+  }
+  &-primary{
+    background: $primary;
+    color: $white;
+    &:hover{
+      background: darken($primary, 5%);
+    }
+  }
+  &-secondary{
+    background: $gray;
+    color: $white;
+    &:hover{
+      background: darken($gray, 5%);
+    }
+  }
+}

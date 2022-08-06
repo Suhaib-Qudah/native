@@ -1,0 +1,40 @@
+.sidebar {
+  display: block;
+  min-width: 300px;
+  //position: fixed;
+  //top: 0;
+  //right: 0;
+  //bottom: 0;
+  height: 100%;
+  min-height: 100vh;
+  background: $light;
+  z-index: 100;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  &-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &-item{
+    display: block;
+    border-bottom: 1px solid $light;
+    &:hover{
+      background: $light;
+    }
+  }
+  &-link{
+    display: block;
+    padding: 2rem;
+    color: $dark;
+    border-bottom: 1px solid $light;
+    font-size: $font-sm;
+    &.active{
+      background: darken($light, 5%);
+      text-decoration: none;
+    }
+    &:hover{
+      background: darken($light, 5%);
+    }
+  }
+}
