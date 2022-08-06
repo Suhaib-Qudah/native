@@ -10,6 +10,8 @@ import { HeaderComponent } from './components/layout/header/header.component';
 import { SidebarComponent } from './components/layout/sidebar/sidebar.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { UserItemComponent } from './components/user-item/user-item.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -20,12 +22,14 @@ import { UserItemComponent } from './components/user-item/user-item.component';
     HeaderComponent,
     SidebarComponent,
     ModalComponent,
-    UserItemComponent
+    UserItemComponent,
+    UserListComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
