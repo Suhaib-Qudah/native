@@ -1,0 +1,17 @@
+<li class="user-item">
+  <div class="user-name ">
+    {{ user.name }}
+  </div>
+  <div class="user-utility">
+    <!-- edit buttons    -->
+    <button class="btn text-primary" (click)="this.active = true">
+      <img src="/assets/icons/edit.svg" alt="edit" width="20" height="20">
+      تعديل
+    </button>
+    <button class="btn text-danger" (click)="deleteItem()" >
+      <img src="/assets/icons/delete.svg" alt="delete" width="20" height="20">
+      حذف
+    </button>
+  </div>
+  <app-modal [user]="user" [edit]="true" [active]="active" (closeModal)="this.active = false"></app-modal>
+</li>

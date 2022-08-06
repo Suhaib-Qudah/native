@@ -1,0 +1,12 @@
+<div class="header">
+  <div class="header-top-light header-top header-top-start">
+    <button class="btn" (click)="modalRun()">
+      <img src="/assets/icons/plus.svg" alt="plus" width="20" height="20">
+      اضافة
+    </button>
+    <!--  filter on change of data  -->
+    <input type="text" [(ngModel)]="filterName" (ngModelChange)="filter()" placeholder="ابحث عن الاسم" class="form-control" style="max-width: 30rem">
+  </div>
+</div>
+<app-modal [active]="active" (closeModal)="modalClose($event)">
+</app-modal>
