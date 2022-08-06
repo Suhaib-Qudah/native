@@ -1,16 +1,18 @@
 .sidebar {
   display: block;
   min-width: 300px;
-  //position: fixed;
-  //top: 0;
-  //right: 0;
-  //bottom: 0;
   height: 100%;
   min-height: 100vh;
   background: $light;
   z-index: 100;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease-in-out;
+  @media screen and (max-width: 768px) {
+    display: none;
+    &.open {
+      display: block;
+    }
+  }
   &-list{
     list-style: none;
     padding: 0;
